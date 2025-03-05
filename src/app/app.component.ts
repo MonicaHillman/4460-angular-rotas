@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RegistroComponent } from './paginas/registro/registro.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ RegistroComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
