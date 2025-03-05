@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Estatisticas } from '../../models/post.model';
 
 @Component({
   selector: 'app-acoes-postagem',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './acoes-postagem.component.html',
-  styleUrl: './acoes-postagem.component.css'
+  styleUrls: ['./acoes-postagem.component.css']
 })
 export class AcoesPostagemComponent {
-
+  @Input() estatisticas!: Estatisticas;
 }
