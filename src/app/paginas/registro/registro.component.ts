@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { AuthService } from '../../servicos/Auth.service';
 
 @Component({
   selector: 'app-registro',
@@ -17,7 +16,6 @@ export class RegistroComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private authService: AuthService
   ) {
     this.registroForm = this.fb.group({
       name: ['', Validators.required],
@@ -28,7 +26,6 @@ export class RegistroComponent {
 
   aoEnviar() {
     if (this.registroForm.valid) {
-      this.authService.login();
       this.router.navigate(["/posts"])
     }
   }
