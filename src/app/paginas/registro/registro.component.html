@@ -13,6 +13,7 @@
       <form
         [formGroup]="registroForm"
         class="registro-form"
+        (ngSubmit)="aoEnviar()"
       >
         <div>
           <label>Nome</label>
