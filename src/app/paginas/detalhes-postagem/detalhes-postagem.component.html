@@ -1,4 +1,3 @@
-<!-- Renderiza o componente apenas se a postagem existir -->
 <div>
   <div class="detalhes-postagem">
     <img
@@ -9,11 +8,7 @@
     <h2>{{ post.titulo }}</h2>
     <p>{{ post.descricao }}</p>
 
-    <!-- Informações do Usuário -->
     <app-usuario-postagem [usuario]="post.usuario"></app-usuario-postagem>
-
-    <!-- Estatísticas -->
-    <app-estatisticas-postagem [estatisticas]="post.estatisticas"></app-estatisticas-postagem>
 
     <a routerLink="/posts">Voltar</a>
   </div>
