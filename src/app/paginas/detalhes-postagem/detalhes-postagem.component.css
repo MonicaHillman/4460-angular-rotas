@@ -1,9 +1,9 @@
-.post-detail {
+.detalhes-postagem {
   padding: 20px;
   color: white;
 }
 
-.post-image {
+.imagem-postagem {
   width: 500px;
   height: 250px;
   object-fit: cover;
