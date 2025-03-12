@@ -4,6 +4,7 @@ import { ListaPostagemComponent } from './paginas/lista-postagem/lista-postagem.
 import { AuthGuard } from './guards/auth.guard';
 import { LayoutComponent } from './componentes/layout/layout.component';
 import { DetalhesPostagemComponent } from './paginas/detalhes-postagem/detalhes-postagem.component';
+import { postResolver } from './resolvers/post.resolver';
 
 export const routes: Routes = [
     {path: "registro", component: RegistroComponent},
@@ -13,10 +14,12 @@ export const routes: Routes = [
         canActivate: [AuthGuard],
         children: [
             {
-                path: "posts", component: ListaPostagemComponent
+                path: "posts", 
+                loadChildren: () => import("./paginas/lista-postagem/lista-postagem.module")
+                .then(modulo => modulo.ListaPostagemModule)
             },
             {
-                path: "posts/:id", component: DetalhesPostagemComponent
+                path: "posts/:id", component: DetalhesPostagemComponent, resolve: { post: postResolver }
             }
         ]
     }
